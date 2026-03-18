@@ -3,25 +3,19 @@
   <head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
     <title>AI Researcher</title>
-    <!--Use 0.52.0 because of dependency issues within modern version-->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.52.0/build/stlite.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.73.0/build/stlite.css" />
   </head>
   <body>
     <div id="root"></div>
-    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.52.0/build/stlite.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.73.0/build/stlite.js"></script>
     <script>
-    stlite.mount({
-    requirements: [],
-    entrypoint: "streamlit_app.py",
-    files: {
-"streamlit_app.py": `
+      stlite.mount({
+        requirements: [],
+        entrypoint: "streamlit_app.py",
+        files: {
+          "streamlit_app.py": `
 import streamlit as st
 #import GeminiBot as gb
 
@@ -37,16 +31,16 @@ st.text_area("Our Gemini AI Bot accepts one research topic and then scours ARXIV
 user_input = st.chat_input("Input a research topic here: ")
 
 #for debugging:
-if(user_input):
-  st.write(user_input + " HelloWorld")
-# if(user_input):
-  # gb.run_agent command
+if user_input:
+    st.write(user_input + " HelloWorld")
+
+# if user_input:
+    # gb.run_agent command
 `
-    },
-  },
-  document.getElementById("root")
-);
+        }
+      },
+      document.getElementById("root")
+      );
     </script>
   </body>
-  <!-- Generated from Stlite Sharing (https://edit.share.stlite.net/), and the source version is d7d98a3e702fc1e5072068876a0b8a48da1ba8f4 -->
 </html>
