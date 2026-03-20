@@ -7,8 +7,6 @@ import gemini_bot as gb #gemini bot we made
 #Streamlit secrets are basically streamlits env format, in the website it is given but in this local project
 #You need to create a .streamlit/secrets.toml
 #Load secrets from secrets.toml
-os.environ["GEMINI_API_KEY"] = st.secrets["GEMINI_KEY"]
-os.environ["Project_Id"] = st.secrets["PROJECTID"]
 
 researchAgent = gb.googleChat()
 

@@ -1,5 +1,5 @@
 import os
-
+import streamlit as st
 import textwrap
 import mainParser
 # from dotenv import load_dotenv
@@ -10,9 +10,11 @@ from google.genai import types
 class googleChat:
     def __init__(self):
         # load_dotenv() Commented out to make way for streamlit's secrets
-        projectID = os.environ["Project_Id"]
+        #Streamlit secrets are basically streamlits env format, in the website it is given but in this local project
+        #You need to create a .streamlit/secrets.toml
+        #Load secrets from secrets.toml
 
-        self.client = genai.Client(vertexai=True, project=projectID, location="us-central1")
+        self.client = genai.Client(api_key=st.secrets["GEMINI_KEY"])
 
 
     def generate_research_ideas(self, paper_topic: str = "Unknown") -> str:
