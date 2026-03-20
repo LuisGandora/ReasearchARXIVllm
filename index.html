@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>AI Researcher</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.73.0/build/stlite.css" />
+  </head>
+  <body>
+    <div id="root"></div>
+    <script src="https://cdn.jsdelivr.net/npm/@stlite/mountable@0.73.0/build/stlite.js"></script>
+    <script>
+      stlite.mount({
+        requirements: [],
+        entrypoint: "streamlit_app.py",
+        files: {
+          "streamlit_app.py": `
+import streamlit as st
+#import GeminiBot as gb
+
+#gemini_bot gb = geminiBot()
+
+st.set_page_config(page_title="AI Researcher", layout="centered")
+
+st.title("AI Researcher (Sponsored by ARXIV jk)")
+
+st.header("How does our bot works?")
+st.text_area("Our Gemini AI Bot accepts one research topic and then scours ARXIV using their API (https://info.arxiv.org/help/api/basics.html) Utilizing that one research topic, our AI bot will search for relevent papers and generate research ideas for you to use" )
+
+user_input = st.chat_input("Input a research topic here: ")
+
+#for debugging:
+if user_input:
+    st.write(user_input + " HelloWorld")
+
+# if user_input:
+    # gb.run_agent command
+`
+        }
+      },
+      document.getElementById("root")
+      );
+    </script>
+  </body>
+</html>
