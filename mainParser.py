@@ -9,7 +9,6 @@ import textwrap
 #Tool for parsing ARXIV 
 #Refer to https://google.github.io/adk-docs/tools/ for more info
 def parseARXIV(researchTopic : str ,max_results : int)->str: 
-    print("Called Oh Yeah")
     """
         Retrieves max_result number of papers related to a research topic inputted.
 
