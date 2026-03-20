@@ -1,0 +1,4 @@
+#needed since streamlit does not allow for python runs
+urllib
+--upgrade certifi
+-U google-genai
