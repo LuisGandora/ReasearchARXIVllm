@@ -24,10 +24,10 @@ On launch, the bot asks the user to type in a research topic. This input is pass
 **Prompt Engineering — Chain-of-Thought Structure**
 The prompt sent to Gemini is broken into four explicit steps to guide the model through a logical reasoning process before producing output:
 
-- **Step 1 — Summarize:** Forces the model to first understand the paper before generating ideas
-- **Step 2 — Identify Gaps:** Directs the model to find limitations the authors did not address
-- **Step 3 — Generate Ideas:** Produces one concrete research idea per gap, each with a title, hypothesis, methodology, and impact statement
-- **Step 4 — Rank:** Asks the model to rank its ideas by feasibility for a small research team
+- **Summarize:** Forces the model to first understand the paper before generating ideas
+- **Identify Gaps:** Directs the model to find limitations the authors did not address
+- **Generate Ideas:** Produces one concrete research idea per gap, each with a title, hypothesis, methodology, and impact statement
+- **Rank:** Asks the model to rank its ideas by feasibility for a small research team
 
 This structure prevents the model from jumping straight to idea generation without grounding its response in the paper's actual content.
 
